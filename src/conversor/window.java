@@ -1,8 +1,10 @@
 package conversor;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 
 public class window extends JFrame implements ActionListener {
 
@@ -15,17 +17,21 @@ public class window extends JFrame implements ActionListener {
     JMenuItem menuItem2;
     JMenuItem menuItem3;
 
+    Dimension  dimension;
+    Toolkit tool;
     public window(){
 
+        tool = Toolkit.getDefaultToolkit();
+        dimension = tool.getScreenSize();
+
         this.setTitle(TITLE);
-        this.setSize(500,400);
+        this.setSize(dimension.width/2,dimension.height/2);
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-        navegadorContainer = new JPanel();
+        this.setResizable(false);
 
+        navegadorContainer = new myJPanel();
         navegadorContainer.add(menuInit());
-
-
         this.add(navegadorContainer);
     }
 
@@ -34,6 +40,7 @@ public class window extends JFrame implements ActionListener {
         menu = new JMenu();
         menu.setSize(100,45);
         menu.setText("MENU");
+        menu.setLocation(10,5);
 
         menuItem1 = new JMenuItem();
         menuItem1.setText("Conversor de Divisas");
@@ -57,6 +64,7 @@ public class window extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-
+        
     }
+
 }
