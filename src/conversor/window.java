@@ -17,15 +17,16 @@ public class window extends JFrame implements ActionListener {
     JMenuItem menuItem2;
     JMenuItem menuItem3;
 
-    Dimension  dimension;
-    Toolkit tool;
+    int width;
+    int height;
     public window(){
 
-        tool = Toolkit.getDefaultToolkit();
-        dimension = tool.getScreenSize();
+        screen screen = new screen();
+        width = screen.width;
+        height = screen.height;
 
         this.setTitle(TITLE);
-        this.setSize(dimension.width/2,dimension.height/2);
+        this.setSize(width/3,height/2);
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setResizable(false);
