@@ -48,7 +48,7 @@ public class myJPanel extends JPanel implements KeyListener {
         requestFocusInWindow();
 
         setGame();
-        this.perfectLoop(10);
+        this.perfectLoop(16);
     }
 
     @Override
@@ -61,7 +61,8 @@ public class myJPanel extends JPanel implements KeyListener {
         ball.setFrame(ballX,ballY,widBall,heiBall);
 
         g2d.draw(jugador);
-        g2d.draw(ball);
+        g2d.fill(ball);
+        
     }
 
     private void setGame(){
